@@ -15,8 +15,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" data-themes='light'>
+      <body className={inter.className}>
+        <section className='relative h-screen w-[100%] flex'>
+        <div className='static flex-none w-[60px] shrink h-full bg-red-400'></div>
+        <div className='static flex-1 h-full bg-slate-200'></div>
+        </section>
+          {children}
+          </body>
     </html>
   )
 }
+
+
+///ถ้าต้องการที่จะจัดคอลัมให้เพิ่ม flex เข้าไป
