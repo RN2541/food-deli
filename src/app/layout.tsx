@@ -19,9 +19,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <section className='relative h-screen w-[100%] flex'>
         <div className='static flex-none w-[60px] shrink h-full bg-red-400'></div>
-        <div className='static flex-1 h-full bg-slate-200'></div>
+        <div className='static flex-1 h-full bg-slate-500'>{children}</div>
+        
         </section>
-          {children}
+      
           </body>
     </html>
   )
