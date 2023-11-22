@@ -1,30 +1,36 @@
+import { CiSearch } from "react-icons/ci";
 export default function Home() {
     return (
         <main className="h-screen w-full flex overflow-scroll">
-            <div className="w-full h-full  pt-6 px-6 space-y-6">
-                <div className="w-full h-auto space-x-4"> Test</div>
-                <div className="w-full h-[200px]  bg-white rounded-3xl">
-                    {" "}
-                    Test 2
+            <div className="w-full h-full">
+                {/* SEACH / Filter */}
+                <div className="w-full h-[10%] bg-white ">
+                    <input
+                        type="text"
+                        placeholder=" Search"
+                        className="w-[50%] px-4 py-1.5 rounded-3xl border border-gray-100 focus:outline-none focus:border-gray-100 bg-gray-100 pl-10 mt-4 ml-8" // เพิ่ม mt-4 เพื่อให้เว้นระยะห่างด้านบน 4 หน่วย
+                    />
+                    <button className="bg-orange-300 text-white py-1.5 px-4 rounded-3xl border border-orange-300 ml-4">
+                        Filter
+                    </button>
                 </div>
-                <div className="w-full h-[400px] bg-indigo-400">Test3</div>
-                <div className="w-full h-auto flex flex-wrap gap-4">
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
-                    <div className="h-[200px] w-[calc(33.33%-16px)] bg-slate-50"></div>
+                {/* จบ SEACH / Filter */}
+                <div className="w-full h-[10%] bg-indigo-600"></div>
+                <div className="w-full h-auto flex flex-wrap">
+                    <div className="flex-grow h-[400px] w-[33.33%] bg-slate-50 mt-[2%] mb-[1%] ml-[5%] mr-[1%]"></div>
+                    <div className="flex-grow h-[400px] w-[33.33%] bg-slate-50 mt-[2%] mb-[1%] ml-[1%] mr-[5%]"></div>
+                    <div className="flex-grow h-[400px] w-[33.33%] bg-slate-50 mt-[1%] mb-[5%] ml-[5%] mr-[1%]"></div>
+                    <div className="flex-grow h-[400px] w-[33.33%] bg-slate-50 mt-[1%] mb-[5%] ml-[1%] mr-[5%]"></div>
                 </div>
             </div>
             <div className="w-[500px] h-full bg-white flex flex-col">
-                <div className="w-full h-[200px] bg-indigo-200"></div>
-                <div className="w-full h-full bg-slate-400"></div>
-                <div className="w-full h-[400px] bg-indigo-400"></div>
+                {/* CUSTOMER INFO */}
+                <div className="w-full h-[10%] bg-indigo-200">
+                    <p>Albert Flores</p>
+                    <p>Purrcof@gmail.com</p>
+                </div>
+                {/* จบ CUSTOMER INFO */}
+                <div className="w-full h-full bg-indigo-300"></div>
             </div>
         </main>
     );
