@@ -18,10 +18,20 @@ export default function RootLayout({
         <html lang="en" data-themes="light">
             <body className={inter.className}>
                 <section className="relative h-screen w-[100%] flex">
-                    <div className="w-[20%] h-full bg-white flex flex-col">
-                        <div className="w-full h-[50%] bg-indigo-200"></div>
-                        <div className="w-full h-[50%] bg-indigo-300"></div>
+                    {/* ในส่วนของ navbar */}
+                    <div className="w-1/5 h-full bg-white flex flex-col justify-center items-center">
+                        <div className="w-full h-1/2 bg-white border-2 border-gray-100 p-2">
+                            <p className="mt-9 ml-10 flex justify-center items-center">
+                                <b className="text-orange-500 text-2xl">
+                                    Purr&#39;
+                                </b>
+                                <b className="text-2xl">Coffee</b>
+                            </p>
+                        </div>
+                        <div className="w-full h-1/2 bg-white border-2 border-gray-100 p-2"></div>
                     </div>
+                    {/* จบในส่วนของ navbar */}
+
                     <div className="static flex-1 h-full bg-slate-200">
                         {children}
                     </div>
