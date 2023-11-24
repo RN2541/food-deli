@@ -46,13 +46,13 @@ export default function Home() {
                 <div className="w-full h-auto flex flex-wrap bg-gray-100">
                     <div className="flex-grow h-[300px] w-[33.33%] rounded-3xl  bg-slate-50 mt-[2%] mb-[1%] ml-[5%] mr-[1%]">
                         <div className="flex items-start">
-                            {/* <img
+                            <img
                                 src="/img/capu.png"
                                 alt=""
                                 className="ml-2 mt-2 rounded-md"
                                 width="100"
                                 height="100"
-                            /> */}
+                            />
                             <div className="flex flex-col">
                                 <span className="ml-6 mt-4 text-xl">
                                     <b>Capucino</b>
@@ -103,13 +103,13 @@ export default function Home() {
                     {/* Latte */}
                     <div className="flex-grow h-[300px] w-[33.33%] rounded-3xl  bg-slate-50 mt-[2%] mb-[1%] ml-[5%] mr-[1%]">
                         <div className="flex items-start">
-                            {/* <img
+                            <img
                                 src="/img/late.png"
                                 alt=""
                                 className="ml-2 mt-2 rounded-md"
                                 width="100"
                                 height="100"
-                            /> */}
+                            />
                             <div className="flex flex-col">
                                 <span className="ml-6 mt-4 text-xl">
                                     <b>CoffeeLatte</b>
@@ -160,13 +160,13 @@ export default function Home() {
                     {/*  Americano */}
                     <div className="flex-grow h-[300px] w-[33.33%] rounded-3xl  bg-slate-50 mt-[2%] mb-[1%] ml-[5%] mr-[1%]">
                         <div className="flex items-start">
-                            {/* <img
+                            <img
                                 src="/img/ameri.png"
                                 alt=""
                                 className="ml-2 mt-2 rounded-md"
                                 width="100"
                                 height="100"
-                            /> */}
+                            />
                             <div className="flex flex-col">
                                 <span className="ml-6 mt-4 text-xl">
                                     <b>Americano</b>
@@ -217,13 +217,13 @@ export default function Home() {
                     {/*  V60 */}
                     <div className="flex-grow h-[300px] w-[33.33%] rounded-3xl  bg-slate-50 mt-[2%] mb-[1%] ml-[5%] mr-[1%]">
                         <div className="flex items-start">
-                            {/* <img
+                            <img
                                 src="/img/v60.png"
                                 alt=""
                                 className="ml-2 mt-2 rounded-md"
                                 width="100"
                                 height="100"
-                            /> */}
+                            />
                             <div className="flex flex-col">
                                 <span className="ml-6 mt-4 text-xl">
                                     <b>V60</b>
@@ -278,11 +278,11 @@ export default function Home() {
             <div className="w-[500px] h-full bg-white flex flex-col">
                 <div className="w-full h-[10%] bg-white flex items-center border-2 border-gray-100 p-2">
                     <div className="flex-shrink-0 rounded-full overflow-hidden">
-                        {/* <img
+                        <img
                             src="/img/women.png"
                             alt=""
                             className="relative w-10 h-10 overflow-hidden bg-gray-300 rounded-full m-5"
-                        /> */}
+                        />
                     </div>
                     <div className="ml-1">
                         <p>
@@ -318,13 +318,13 @@ export default function Home() {
                 <div className="w-full h-[60%] bg-white">
                     {/* Capucino*/}
                     <div className="flex items-start">
-                        {/* <img
+                        <img
                             src="/img/capu.png"
                             alt=""
                             className="ml-10 rounded-md"
                             width="80"
                             height="80"
-                        /> */}
+                        />
                         <div className="flex flex-col">
                             <span className="ml-5 text-xl">Capucino</span>
                             <span className="text-gray-400 ml-5 mt-2 ">
@@ -350,13 +350,13 @@ export default function Home() {
 
                     {/* Coffee Latte */}
                     <div className="flex items-start mb-6">
-                        {/* <img
+                        <img
                             src="/img/late.png"
                             alt=""
                             className="ml-10 mt-10 rounded-md"
                             width="80"
                             height="80"
-                        /> */}
+                        />
                         <div className="flex flex-col">
                             <span className="ml-5 mt-10 text-xl">
                                 Coffee Latte
