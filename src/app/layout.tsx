@@ -27,6 +27,7 @@ export default function RootLayout({
         <html lang="en" data-themes="light">
             <body className={inter.className}>
                 <section className="relative h-screen w-[100%] flex">
+                    
                     {/* ในส่วนของ navbar 1 */}
                     <div className="w-1/5 h-full bg-white flex flex-col justify-center items-center">
                         <div className="w-full h-1/2 bg-white border-2 border-gray-100 p-2">
@@ -65,6 +66,7 @@ export default function RootLayout({
                             </p>
                         </div>
                         {/* จบในส่วนของ navbar 1 */}
+
 
                         {/* ในส่วนของ navbar 2 */}
                         <div className="w-full h-1/2 bg-white border-2 border-gray-100 p-2">
