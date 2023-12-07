@@ -30,12 +30,12 @@ function Card({ item, onClick }: { item: Item; onClick: () => void }) {
     };
 
     return (
-        <div className="flex-grow h-[300px] rounded-3xl bg-slate-50 mt-[2%] mb-[1%] ml-[8%] mr-[1%]">
+        <div className="flex-grow h-[300px] rounded-3xl bg-white mt-[5%] mb-[1%] ml-[8%] mr-[1%]">
             <div key={item.id} className="flex items-start">
                 <img
                     src={item.imageSrc}
                     alt=""
-                    className="ml-2 mt-2 rounded-md"
+                    className="ml-2 mt-2 rounded-xl"
                     width="100"
                     height="100"
                 />
