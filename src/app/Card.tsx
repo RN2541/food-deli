@@ -1,16 +1,36 @@
-import React from "react";
+"use client";
+import { list } from "postcss";
+import React, { useState } from "react";
+import { setDefaultHighWaterMark } from "stream";
 
-interface Item {
+export interface Item {
     imageSrc: string;
     name: string;
-    price: string;
+    price: number;
     detail: string;
     id: string;
 }
 
-function Card({ item }: { item: Item }) {
+function Card({ item, onClick }: { item: Item; onClick: () => void }) {
+    const [quantity, setQuantity] = useState<number>(0);
+
+    const handleIncrement = () => {
+        setQuantity((prevQuantity) => prevQuantity + 1);
+    };
+
+    const handleDecrement = () => {
+        if (quantity > 0) {
+            setQuantity((prevQuantity) => prevQuantity - 1);
+        }
+    };
+
+    const handleAddToCart = () => {
+        // ทำสิ่งที่ต้องการเมื่อคลิกปุ่ม "Added to cart"
+        console.log(`Added ${quantity} ${item.name} to cart`);
+    };
+
     return (
-        <div className="flex-grow h-[300px] rounded-3xl bg-slate-50 mt-[2%] mb-[1%] ml-[5%] mr-[1%]">
+        <div className="flex-grow h-[300px] rounded-3xl bg-slate-50 mt-[2%] mb-[1%] ml-[8%] mr-[1%]">
             <div key={item.id} className="flex items-start">
                 <img
                     src={item.imageSrc}
@@ -43,14 +63,24 @@ function Card({ item }: { item: Item }) {
                     </span>
 
                     <div className="flex items-center ml-[-100px]">
-                        <span className="ml-3 mt-6 inline-block w-7 h-7 rounded-full bg-white border border-gray-400 flex items-center justify-center">
+                        <span
+                            className="ml-3 mt-6 inline-block w-7 h-7 rounded-full bg-white border border-gray-400 flex items-center justify-center cursor-pointer"
+                            onClick={handleDecrement}
+                        >
                             <span className="text-xs text-black">-</span>
                         </span>
-                        <b className="ml-2 mt-6">3</b>
-                        <span className="ml-2 mt-6 inline-block w-7 h-7 rounded-full bg-white border border-gray-400 flex items-center justify-center">
+                        <b className="ml-2 mt-6">{quantity}</b>
+                        <span
+                            className="ml-2 mt-6 inline-block w-7 h-7 rounded-full bg-white border border-gray-400 flex items-center justify-center cursor-pointer"
+                            onClick={handleIncrement}
+                        >
                             <span className="text-xs text-black">+</span>
                         </span>
-                        <button className="bg-gray-100 text-orange-400 py-1.5 w-[220px] rounded-3xl border border-orange-400 ml-7 mt-8 hover:bg-orange-400 hover:text-white focus:outline-none focus:border-orange-400 focus:ring-0 active:bg-orange-400">
+
+                        <button
+                            className="bg-gray-100 text-orange-400 py-1.5 w-[220px] rounded-3xl border border-orange-400 ml-7 mt-8 hover:bg-orange-400 hover:text-white focus:outline-none focus:border-orange-400 focus:ring-0 active:bg-orange-400"
+                            onClick={onClick}
+                        >
                             Added to cart
                         </button>
                     </div>
@@ -60,34 +90,34 @@ function Card({ item }: { item: Item }) {
     );
 }
 
-function Cards() {
+function Cards({ onClick }: { onClick: (item: Item) => void }) {
     const items: Item[] = [
         {
             imageSrc: "/img/capu.png",
             name: "Capucino",
-            price: "$4.98",
+            price: 4.98,
             detail: "The combination of coffee, milk, and palm sugar makes this drink delicious",
             id: "1",
         },
         {
-            imageSrc: "/img/capu.png",
-            name: "Capucino",
-            price: "$4.98",
-            detail: "The combination of coffee, milk, and palm sugar makes this drink delicious",
+            imageSrc: "/img/late.png",
+            name: "CoffeeLatte",
+            price: 5.98,
+            detail: "This caffe latte or coffee lotte is one of the popular types of milk coffee",
             id: "2",
         },
         {
-            imageSrc: "/img/capu.png",
-            name: "Capucino",
-            price: "$4.98",
-            detail: "The combination of coffee, milk, and palm sugar makes this drink delicious",
+            imageSrc: "/img/ameri.png",
+            name: "Americano",
+            price: 5.98,
+            detail: "Americano coffee is espresso drink combined with hot water",
             id: "3",
         },
         {
-            imageSrc: "/img/capu.png",
-            name: "Capucino",
-            price: "$4.98",
-            detail: "The combination of coffee, milk, and palm sugar makes this drink delicious",
+            imageSrc: "/img/v60.png",
+            name: "V60",
+            price: 5.98,
+            detail: "The V60 techniques is one of the most used techniques by barista.",
             id: "4",
         },
     ];
@@ -96,7 +126,12 @@ function Cards() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             {items.map((item) => (
                 <div key={item.id} className="mb-4">
-                    <Card item={item} />
+                    <Card
+                        item={item}
+                        onClick={() => {
+                            onClick(item);
+                        }}
+                    />
                 </div>
             ))}
         </div>
