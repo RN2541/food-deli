@@ -9,6 +9,20 @@ import React, { useState } from "react";
 
 export default function Home() {
     const [order, setOrder] = React.useState<Item[]>([]);
+    // State เพื่อเก็บจำนวนสินค้าในตะกร้า
+    const [productCount, setProductCount] = useState(0);
+
+    // ฟังก์ชันเพิ่มจำนวนสินค้า
+    const increaseProductCount = () => {
+        setProductCount((prevQuantity) => prevQuantity + 1);
+    };
+
+    // ฟังก์ชันลดจำนวนสินค้า
+    const decreaseProductCount = () => {
+        if (productCount > 0) {
+            setProductCount((prevQuantity) => prevQuantity - 1);
+        }
+    };
 
     return (
         <main className="h-screen w-full flex overflow-scroll">
@@ -114,16 +128,42 @@ export default function Home() {
                                     width="100"
                                     height="100"
                                 />
-                                <div className="ml-4">
+                                <div className="ml-4 mt-8">
                                     <b>
                                         <p>{item.name}</p>
                                     </b>
-                                    <p>
-                                        <span className="text-gray-400">
+                                    <p className="mt-2">
+                                        <span className="text-gray-400 ">
                                             Size
                                         </span>
                                         <br />
-                                        <span>{item.price}</span>
+                                        <div className="flex items-center">
+                                            {/* ปุ่มลดจำนวนสินค้า (-) */}
+                                            <span className="mt-6">
+                                                {item.price}
+                                            </span>
+                                            <span
+                                                className="ml-10 mt-6 inline-block w-7 h-7 rounded-full bg-white border border-gray-400 flex items-center justify-center cursor-pointer"
+                                                onClick={decreaseProductCount}
+                                            >
+                                                <span className="text-xs text-black">
+                                                    -
+                                                </span>
+                                            </span>
+                                            {/* แสดงจำนวนสินค้าที่เลือก */}
+                                            <b className="ml-2 mt-6">
+                                                {productCount}
+                                            </b>
+                                            {/* ปุ่มเพิ่มจำนวนสินค้า (+) */}
+                                            <span
+                                                className="ml-2 mt-6 inline-block w-7 h-7 rounded-full bg-white border border-gray-400 flex items-center justify-center cursor-pointer"
+                                                onClick={increaseProductCount}
+                                            >
+                                                <span className="text-xs text-black">
+                                                    +
+                                                </span>
+                                            </span>
+                                        </div>
                                     </p>
                                 </div>
                             </div>
